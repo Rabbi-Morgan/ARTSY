@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Header from './components/Header';
+import HeaderDesktop from './components/HeaderDesktop';
 
 function App() {
+  const [screenSize, setScreenSize] = useState(window.innerWidth)
+
+  const changeSize=()=> {
+    setScreenSize(window.innerWidth)
+    console.log('changing')
+  }
+  window.addEventListener('resize', changeSize)
+  useEffect(()=>{
+    window.addEventListener('resize', changeSize)
+    changeSize()
+  },[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App overflow-hidden">
+     {screenSize>768?<HeaderDesktop/>:<Header/>}
     </div>
   );
 }

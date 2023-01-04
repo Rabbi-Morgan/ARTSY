@@ -1,0 +1,9 @@
+.red_drop {
+    filter: drop-shadow(2px 2px 5px rgb(220,38,38));
+}
+.blue_drop {
+    filter: drop-shadow(2px 2px 5px #60a5fa);
+}
+.light_red_drop {
+    filter: drop-shadow(2px 2px 5px #fca5a5);
+}
