@@ -8,7 +8,6 @@ function App() {
 
   const changeSize=()=> {
     setScreenSize(window.innerWidth)
-    console.log('changing')
   }
   window.addEventListener('resize', changeSize)
   useEffect(()=>{
